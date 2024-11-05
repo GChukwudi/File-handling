@@ -14,33 +14,33 @@
 
 typedef struct Employee
 {
-    char email[EMAIL_LEN];
-    int age;
-    float salary;
+	char email[EMAIL_LEN];
+	int age;
+	float salary;
 } Employee;
 
 int main(void)
 {
-    FILE *file;
-    Employee employee[5];
-    int i;
+	FILE *file;
+	Employee employee[5];
+	int i;
 
-    file = fopen("employe.bin", "rb");
+	file = fopen("employe.bin", "rb");
 
-    if (file == NULL)
-    {
-        printf("Error opening file\n");
-        exit(1);
-    }
+	if (file == NULL)
+	{
+		printf("Error opening file\n");
+		exit(1);
+	}
 
-    fread(employee, sizeof(Employee), 5, file);
-    fclose(file);
+	fread(employee, sizeof(Employee), 5, file);
+	fclose(file);
 
-    for (i = 0; i < 5; i++)
-    {
-        printf("Email: %s, Age: %d, Salary: %.2f\n",
-               employee[i].email, employee[i].age, employee[i].salary);
-    }
+	for (i = 0; i < 5; i++)
+	{
+		printf("Email: %s, Age: %d, Salary: %.2f\n",
+			   employee[i].email, employee[i].age, employee[i].salary);
+	}
 
-    return (0);
+	return (0);
 }
